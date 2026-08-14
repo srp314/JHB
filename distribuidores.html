@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Distribuidores | JHB</title>
+<meta name="description" content="Encontrá un distribuidor de JHB cerca tuyo, o sumate a la red de distribuidores de bordeadoras y estufas de cuarzo Tilcara y Victoria.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <a class="nav__logo" href="index.html"><img src="assets/logo-violeta.jpeg" alt="JHB — Solo JHB Calidad"></a>
+  <nav class="nav__links">
+    <a href="index.html">Inicio</a>
+    <a href="catalogo.html">Catálogo</a>
+    <a href="distribuidores.html" class="is-active">Distribuidores</a>
+    <a href="index.html#contacto">Contacto</a>
+  </nav>
+  <div class="nav__ctas">
+    <a class="btn btn--outline" href="index.html#contacto">Solicitar cotización</a>
+    <a class="btn btn--solid" href="catalogo.html">Ver catálogo</a>
+  </div>
+  <button class="nav__burger" aria-label="Abrir menú" id="navBurger">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="page-header">
+  <div class="eyebrow">Distribuidores</div>
+  <h1 class="ls">Encontranos cerca tuyo</h1>
+</div>
+
+<section class="distributors">
+  <div class="distributors__grid">
+    <div class="distributor-card">
+      <h3>Ferretería del Centro</h3>
+      <p>Córdoba capital — [dirección a confirmar]</p>
+    </div>
+    <div class="distributor-card">
+      <h3>Hogar &amp; Jardín SRL</h3>
+      <p>Rosario, Santa Fe — [dirección a confirmar]</p>
+    </div>
+    <div class="distributor-card">
+      <h3>Distribuidora Sur</h3>
+      <p>Neuquén — [dirección a confirmar]</p>
+    </div>
+  </div>
+</section>
+
+<section class="distributors-cta">
+  <h2 class="ls">¿Querés vender productos JHB?</h2>
+  <p>Sumate a la red de distribuidores de Tilcara y Victoria. Contanos sobre tu comercio y te contactamos.</p>
+  <a class="btn btn--solid" href="index.html#contacto">Solicitar información</a>
+</section>
+
+<footer>
+  <span>© 2026 JHB — Solo JHB Calidad</span>
+  <div class="social"><a href="#">Instagram</a><a href="#">Facebook</a><a href="#">WhatsApp</a></div>
+</footer>
+
+<script>
+document.getElementById('navBurger').addEventListener('click', function(){
+  document.querySelector('.nav__links').classList.toggle('nav__links--open');
+});
+</script>
+</body>
+</html>

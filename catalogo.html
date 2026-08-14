@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Catálogo — Bordeadoras y estufas de cuarzo | JHB</title>
+<meta name="description" content="Catálogo completo de bordeadoras (Tilcara y Victoria) y estufas de cuarzo (Tilcara) fabricadas por JHB.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <a class="nav__logo" href="index.html"><img src="assets/logo-violeta.jpeg" alt="JHB — Solo JHB Calidad"></a>
+  <nav class="nav__links">
+    <a href="index.html">Inicio</a>
+    <a href="catalogo.html" class="is-active">Catálogo</a>
+    <a href="distribuidores.html">Distribuidores</a>
+    <a href="index.html#contacto">Contacto</a>
+  </nav>
+  <div class="nav__ctas">
+    <a class="btn btn--outline" href="index.html#contacto">Solicitar cotización</a>
+    <a class="btn btn--solid" href="distribuidores.html">Ser distribuidor</a>
+  </div>
+  <button class="nav__burger" aria-label="Abrir menú" id="navBurger">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="page-header">
+  <div class="eyebrow">Catálogo completo</div>
+  <h1 class="ls">Bordeadoras y estufas de cuarzo</h1>
+</div>
+
+<div class="filters" id="filters">
+  <button class="filter-pill is-active" data-filter="todos">Todos</button>
+  <button class="filter-pill" data-filter="bordeadoras">Bordeadoras</button>
+  <button class="filter-pill" data-filter="estufas">Estufas de cuarzo</button>
+</div>
+
+<section class="full-catalog">
+  <div class="catalog__grid">
+    <div class="prod-card" data-category="bordeadoras">
+      <img src="assets/prod-3.jpeg" alt="Bordeadora eléctrica Tilcara">
+      <div class="prod-card__body">
+        <h3 class="ls">Bordeadora eléctrica</h3>
+        <p class="prod-card__brand prod-card__brand--tilcara">Tilcara</p>
+      </div>
+    </div>
+    <div class="prod-card" data-category="bordeadoras">
+      <img src="assets/prod-2.jpeg" alt="Bordeadora eléctrica Victoria">
+      <div class="prod-card__body">
+        <h3 class="ls">Bordeadora eléctrica</h3>
+        <p class="prod-card__brand prod-card__brand--victoria">Victoria</p>
+      </div>
+    </div>
+    <div class="prod-card" data-category="bordeadoras">
+      <img src="assets/prod-4.jpeg" alt="Bordeadora Victoria 500W">
+      <div class="prod-card__body">
+        <h3 class="ls">Bordeadora 500W</h3>
+        <p class="prod-card__brand prod-card__brand--victoria">Victoria</p>
+      </div>
+    </div>
+    <div class="prod-card" data-category="estufas">
+      <img class="contain" src="assets/prod-5.jpeg" alt="Estufa de cuarzo pared Tilcara" style="background:#111">
+      <div class="prod-card__body">
+        <h3 class="ls">Estufa cuarzo pared</h3>
+        <p class="prod-card__brand prod-card__brand--tilcara">Tilcara</p>
+      </div>
+    </div>
+    <a class="prod-card prod-card__link" data-category="estufas" href="producto-estufa-torre.html">
+      <img class="contain" src="assets/prod-7.jpeg" alt="Estufa de cuarzo torre Tilcara" style="background:#111">
+      <div class="prod-card__body">
+        <h3 class="ls">Estufa torre</h3>
+        <p class="prod-card__brand prod-card__brand--tilcara">Tilcara</p>
+      </div>
+    </a>
+    <div class="prod-card" data-category="estufas">
+      <img class="contain" src="assets/prod-8.jpeg" alt="Estufa de cuarzo cuadrada Tilcara" style="background:#f4f5f7">
+      <div class="prod-card__body">
+        <h3 class="ls">Estufa cuadrada</h3>
+        <p class="prod-card__brand prod-card__brand--tilcara">Tilcara</p>
+      </div>
+    </div>
+    <div class="prod-card" data-category="estufas">
+      <img class="contain" src="assets/prod-9.jpeg" alt="Estufa de cuarzo torre negra Tilcara" style="background:#111">
+      <div class="prod-card__body">
+        <h3 class="ls">Estufa torre negra</h3>
+        <p class="prod-card__brand prod-card__brand--tilcara">Tilcara</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="distributors-cta">
+  <h2 class="ls">¿No encontrás el modelo que buscás?</h2>
+  <p>Escribinos y te ayudamos a encontrar el producto justo para tu casa, jardín o comercio.</p>
+  <a class="btn btn--solid" href="index.html#contacto">Solicitar cotización</a>
+</section>
+
+<footer>
+  <span>© 2026 JHB — Solo JHB Calidad</span>
+  <div class="social"><a href="#">Instagram</a><a href="#">Facebook</a><a href="#">WhatsApp</a></div>
+</footer>
+
+<script>
+document.getElementById('navBurger').addEventListener('click', function(){
+  document.querySelector('.nav__links').classList.toggle('nav__links--open');
+});
+
+var pills = document.querySelectorAll('.filter-pill');
+var cards = document.querySelectorAll('.prod-card[data-category]');
+pills.forEach(function(pill){
+  pill.addEventListener('click', function(){
+    pills.forEach(function(p){ p.classList.remove('is-active'); });
+    pill.classList.add('is-active');
+    var filter = pill.getAttribute('data-filter');
+    cards.forEach(function(card){
+      var show = filter === 'todos' || card.getAttribute('data-category') === filter;
+      card.hidden = !show;
+    });
+  });
+});
+</script>
+</body>
+</html>

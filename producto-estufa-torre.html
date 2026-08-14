@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estufa de cuarzo torre Tilcara | JHB</title>
+<meta name="description" content="Estufa de cuarzo torre Tilcara — calefacción radiante para el hogar, fabricada por JHB.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <a class="nav__logo" href="index.html"><img src="assets/logo-violeta.jpeg" alt="JHB — Solo JHB Calidad"></a>
+  <nav class="nav__links">
+    <a href="index.html">Inicio</a>
+    <a href="catalogo.html" class="is-active">Catálogo</a>
+    <a href="distribuidores.html">Distribuidores</a>
+    <a href="index.html#contacto">Contacto</a>
+  </nav>
+  <div class="nav__ctas">
+    <a class="btn btn--outline" href="index.html#contacto">Solicitar cotización</a>
+    <a class="btn btn--solid" href="catalogo.html">Ver catálogo</a>
+  </div>
+  <button class="nav__burger" aria-label="Abrir menú" id="navBurger">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="product-detail">
+  <div class="product-detail__gallery">
+    <img id="mainImage" src="assets/prod-7.jpeg" alt="Estufa de cuarzo torre Tilcara" style="background:#111">
+    <div class="product-detail__thumbs">
+      <img src="assets/prod-7.jpeg" alt="Vista 1" data-full="assets/prod-7.jpeg" style="background:#111">
+      <img src="assets/prod-6.jpeg" alt="Vista 2" data-full="assets/prod-6.jpeg" style="background:#111">
+    </div>
+  </div>
+  <div>
+    <div class="eyebrow">Detalle de producto</div>
+    <h1 class="ls">Estufa de cuarzo torre TILCARA</h1>
+    <div class="product-detail__tags">
+      <span class="product-detail__tag">Uso interior</span>
+      <span class="product-detail__tag">Diseño torre</span>
+    </div>
+    <p class="product-detail__desc">Calefacción radiante por cuarzo, encendido inmediato, pensada para calentar ambientes del hogar. Esta página es un ejemplo de ficha de producto — las especificaciones técnicas reales todavía están pendientes de confirmar con la empresa.</p>
+    <ul class="product-detail__specs">
+      <li>Potencia: [a confirmar]</li>
+      <li>Niveles de calor: [a confirmar]</li>
+      <li>Medidas / peso: [a confirmar]</li>
+      <li>Garantía: [a confirmar]</li>
+    </ul>
+    <a class="btn btn--solid" href="index.html#contacto">Consultar a un distribuidor</a>
+  </div>
+</div>
+
+<footer>
+  <span>© 2026 JHB — Solo JHB Calidad</span>
+  <div class="social"><a href="#">Instagram</a><a href="#">Facebook</a><a href="#">WhatsApp</a></div>
+</footer>
+
+<script>
+document.getElementById('navBurger').addEventListener('click', function(){
+  document.querySelector('.nav__links').classList.toggle('nav__links--open');
+});
+document.querySelectorAll('.product-detail__thumbs img').forEach(function(thumb){
+  thumb.addEventListener('click', function(){
+    document.getElementById('mainImage').src = thumb.getAttribute('data-full');
+  });
+});
+</script>
+</body>
+</html>
