@@ -37,11 +37,9 @@ img{display:block;max-width:100%}
 .hero{position:relative}
 .hero__split{position:relative;display:grid;grid-template-columns:1fr 1fr;height:520px}
 .hero__panel{position:relative;overflow:hidden;color:#fff}
-.hero__panel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero__panel img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:78px 56px 108px}
 .hero__panel--garden{background:#46586b}
-.hero__panel--garden img{object-position:center 30%;mix-blend-mode:multiply;opacity:.92}
 .hero__panel--home{background:#2b3642}
-.hero__panel--home img{object-position:center 40%;opacity:.85}
 .hero__tag{position:absolute;top:24px;font-size:10.5px;font-weight:700;letter-spacing:1.2px;padding:6px 12px;border-radius:2px;text-transform:uppercase}
 .hero__panel--garden .hero__tag{left:36px;background:var(--violet)}
 .hero__panel--home .hero__tag{right:36px;background:var(--blue)}
@@ -130,8 +128,9 @@ footer .social{display:flex;gap:18px}
   .nav__ctas{display:none}
   .nav__burger{display:flex}
 
-  .hero__split{grid-template-columns:1fr;height:460px}
-  .hero__panel{height:230px}
+  .hero__split{grid-template-columns:1fr;height:560px}
+  .hero__panel{height:280px}
+  .hero__panel img{padding:78px 30px 78px}
   .hero__headline{font-size:22px;bottom:auto}
   .hero__headline br{display:none}
   .hero__panel--garden .hero__headline{top:38px;left:16px}
