@@ -1,0 +1,25 @@
+{
+  "name": "jhb",
+  "version": "1.0.0",
+  "description": "JHB - Bordeadoras y estufas de cuarzo | Industria argentina",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve .",
+    "build": "echo 'Static site - no build needed'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srp314/JHB.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/srp314/JHB/issues"
+  },
+  "homepage": "https://github.com/srp314/JHB#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
