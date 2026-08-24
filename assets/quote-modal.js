@@ -1,5 +1,5 @@
 (function(){
-  var WHATSAPP_NUMBER = '5491155887829';
+  var SHEET_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzJ0WMoSI3s_UVWTsx6cOZf5S-l1o0Is8cOUI_2i0luAYo9u3DGo55jno1CApB1huKh/exec';
 
   var backdrop = document.createElement('div');
   backdrop.className = 'quote-backdrop';
@@ -8,7 +8,7 @@
       '<button type="button" class="quote-modal__close" id="quoteClose" aria-label="Cerrar">&times;</button>' +
       '<div class="eyebrow">Cotización</div>' +
       '<h2 class="ls" id="quoteTitle">Solicitar cotización</h2>' +
-      '<p class="quote-modal__sub">Completá tus datos y te contactamos por WhatsApp.</p>' +
+      '<p class="quote-modal__sub">Completá tus datos y te contactamos a la brevedad.</p>' +
       '<form id="quoteForm" class="quote-form">' +
         '<div class="quote-form__field">' +
           '<label for="qName">Nombre y apellido</label>' +
@@ -35,7 +35,7 @@
           '<textarea id="qMessage" name="message" rows="4" placeholder="Contanos qué producto te interesa"></textarea>' +
         '</div>' +
         '<p class="quote-form__status" id="quoteStatus"></p>' +
-        '<button type="submit" class="btn btn--solid btn--block">Enviar por WhatsApp</button>' +
+        '<button type="submit" class="btn btn--solid btn--block" id="quoteSubmit">Enviar cotización</button>' +
       '</form>' +
     '</div>';
   document.body.appendChild(backdrop);
@@ -46,6 +46,7 @@
   var locationBtn = document.getElementById('qLocationBtn');
   var closeBtn = document.getElementById('quoteClose');
   var status = document.getElementById('quoteStatus');
+  var submitBtn = document.getElementById('quoteSubmit');
 
   function openModal(){
     backdrop.classList.add('is-open');
@@ -101,20 +102,35 @@
       return;
     }
 
-    var lines = [
-      'Hola JHB, quiero solicitar una cotización.',
-      'Nombre: ' + nameInput.value.trim(),
-      'Teléfono: ' + document.getElementById('qPhone').value.trim(),
-      'Email: ' + document.getElementById('qEmail').value.trim()
-    ];
-    var location = locationInput.value.trim();
-    var message = document.getElementById('qMessage').value.trim();
-    if (location) lines.push('Ciudad/Provincia: ' + location);
-    if (message) lines.push('Mensaje: ' + message);
+    var payload = new URLSearchParams({
+      nombre: nameInput.value.trim(),
+      telefono: document.getElementById('qPhone').value.trim(),
+      email: document.getElementById('qEmail').value.trim(),
+      ubicacion: locationInput.value.trim(),
+      mensaje: document.getElementById('qMessage').value.trim(),
+      pagina: window.location.pathname.split('/').pop() || 'index.html'
+    });
 
-    var text = encodeURIComponent(lines.join('\n'));
-    window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + text, '_blank');
-    closeModal();
-    form.reset();
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando…';
+    status.classList.remove('is-visible');
+
+    fetch(SHEET_WEBHOOK_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: payload
+    }).then(function(){
+      status.textContent = '¡Gracias! Te contactamos a la brevedad.';
+      status.classList.add('is-visible');
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Enviar cotización';
+      form.reset();
+      setTimeout(closeModal, 2200);
+    }).catch(function(){
+      status.textContent = 'No pudimos enviar tu consulta. Revisá tu conexión e intentá de nuevo.';
+      status.classList.add('is-visible');
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Enviar cotización';
+    });
   });
 })();
