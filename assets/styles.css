@@ -110,6 +110,10 @@ section.block{padding:64px 44px}
 .product-detail__desc{font-size:14.5px;line-height:1.7;color:var(--ink-soft);margin:0 0 22px}
 .product-detail__specs{margin:0 0 26px;padding-left:18px;color:var(--ink-soft);font-size:13.5px;line-height:2}
 
+/* ---------- FICHAS TÉCNICAS (stack) ---------- */
+.spec-sheets{padding:0 44px 64px;display:flex;flex-direction:column;gap:28px}
+.spec-sheets img{width:100%;border-radius:14px;box-shadow:0 10px 26px rgba(0,0,0,.08)}
+
 /* ---------- CONTACTO ---------- */
 .contact{background:var(--dark-bg);color:#fff;display:grid;grid-template-columns:1fr 1fr;gap:40px}
 .contact .eyebrow{color:var(--lilac)}
@@ -156,6 +160,7 @@ footer .social{display:flex;gap:18px}
   .filters{padding:0 20px 24px}
   .full-catalog{padding:0 20px 40px}
   .full-catalog .catalog__grid{grid-template-columns:1fr 1fr;gap:12px}
+  .spec-sheets{padding:0 20px 40px;gap:18px}
 
   .distributors{padding:0 20px 40px}
   .distributors__grid{grid-template-columns:1fr}
