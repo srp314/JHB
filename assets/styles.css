@@ -133,6 +133,11 @@ section.block{padding:64px 44px}
 .quote-form__hint{font-size:11px;color:var(--ink-soft);margin:0}
 .quote-form__status{font-size:13px;color:var(--violet);margin:0;display:none}
 .quote-form__status.is-visible{display:block}
+.quote-success{display:none;text-align:center;padding:8px 0 4px}
+.quote-success.is-visible{display:block}
+.quote-success__icon{width:64px;height:64px;border-radius:50%;background:var(--violet);color:#fff;font-size:28px;display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
+.quote-success h3{font-size:22px;margin:0 0 10px;color:var(--ink)}
+.quote-success p{font-size:14px;color:var(--ink-soft);line-height:1.6;margin:0 0 26px}
 
 /* ---------- CONTACTO ---------- */
 .contact{background:var(--dark-bg);color:#fff;display:grid;grid-template-columns:1fr 1fr;gap:40px}

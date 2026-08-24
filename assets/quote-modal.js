@@ -37,6 +37,12 @@
         '<p class="quote-form__status" id="quoteStatus"></p>' +
         '<button type="submit" class="btn btn--solid btn--block" id="quoteSubmit">Enviar cotización</button>' +
       '</form>' +
+      '<div class="quote-success" id="quoteSuccess">' +
+        '<div class="quote-success__icon">&#10003;</div>' +
+        '<h3 class="ls">¡Cotización enviada!</h3>' +
+        '<p>Recibimos tu consulta. Nos vamos a poner en contacto a la brevedad.</p>' +
+        '<button type="button" class="btn btn--solid btn--block" id="quoteSuccessClose">Cerrar</button>' +
+      '</div>' +
     '</div>';
   document.body.appendChild(backdrop);
 
@@ -47,10 +53,22 @@
   var closeBtn = document.getElementById('quoteClose');
   var status = document.getElementById('quoteStatus');
   var submitBtn = document.getElementById('quoteSubmit');
+  var successView = document.getElementById('quoteSuccess');
+  var successCloseBtn = document.getElementById('quoteSuccessClose');
+
+  function showForm(){
+    form.style.display = '';
+    successView.classList.remove('is-visible');
+  }
+  function showSuccess(){
+    form.style.display = 'none';
+    successView.classList.add('is-visible');
+  }
 
   function openModal(){
     backdrop.classList.add('is-open');
     document.body.style.overflow = 'hidden';
+    showForm();
     nameInput.focus();
   }
   function closeModal(){
@@ -66,6 +84,7 @@
   });
 
   closeBtn.addEventListener('click', closeModal);
+  successCloseBtn.addEventListener('click', closeModal);
   backdrop.addEventListener('click', function(e){
     if (e.target === backdrop) closeModal();
   });
@@ -120,12 +139,11 @@
       mode: 'no-cors',
       body: payload
     }).then(function(){
-      status.textContent = '¡Gracias! Te contactamos a la brevedad.';
-      status.classList.add('is-visible');
       submitBtn.disabled = false;
       submitBtn.textContent = 'Enviar cotización';
       form.reset();
-      setTimeout(closeModal, 2200);
+      showSuccess();
+      setTimeout(closeModal, 5000);
     }).catch(function(){
       status.textContent = 'No pudimos enviar tu consulta. Revisá tu conexión e intentá de nuevo.';
       status.classList.add('is-visible');
