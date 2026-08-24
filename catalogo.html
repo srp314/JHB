@@ -20,7 +20,7 @@
     <a href="index.html#contacto">Contacto</a>
   </nav>
   <div class="nav__ctas">
-    <a class="btn btn--outline" href="index.html#contacto">Solicitar cotización</a>
+    <a class="btn btn--outline js-quote-btn" href="index.html#contacto">Solicitar cotización</a>
     <a class="btn btn--solid" href="distribuidores.html">Ser distribuidor</a>
   </div>
   <button class="nav__burger" aria-label="Abrir menú" id="navBurger">
@@ -89,7 +89,7 @@
 <section class="distributors-cta">
   <h2 class="ls">¿No encontrás el modelo que buscás?</h2>
   <p>Escribinos y te ayudamos a encontrar el producto justo para tu casa, jardín o comercio.</p>
-  <a class="btn btn--solid" href="index.html#contacto">Solicitar cotización</a>
+  <a class="btn btn--solid js-quote-btn" href="index.html#contacto">Solicitar cotización</a>
 </section>
 
 <footer>
@@ -123,5 +123,6 @@ if (catParam && document.querySelector('.filter-pill[data-filter="' + catParam +
   applyFilter(catParam);
 }
 </script>
+<script src="assets/quote-modal.js"></script>
 </body>
 </html>
