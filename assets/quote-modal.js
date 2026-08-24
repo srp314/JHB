@@ -7,7 +7,7 @@
     '<div class="quote-modal" role="dialog" aria-modal="true" aria-labelledby="quoteTitle">' +
       '<button type="button" class="quote-modal__close" id="quoteClose" aria-label="Cerrar">&times;</button>' +
       '<div class="eyebrow">Cotización</div>' +
-      '<h2 class="ls" id="quoteTitle">Solicitar cotización</h2>' +
+      '<h2 class="ls" id="quoteTitle">Solicitar información</h2>' +
       '<p class="quote-modal__sub">Completá tus datos y te contactamos a la brevedad.</p>' +
       '<form id="quoteForm" class="quote-form">' +
         '<div class="quote-form__field">' +
