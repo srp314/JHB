@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bordeadora eléctrica línea Tradicional - Tilcara | JHB</title>
+<meta name="description" content="Bordeadora eléctrica línea Tradicional Tilcara — modelos B-110/2, B-111/2 y B-112/2, fabricados por JHB.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <a class="nav__logo" href="index.html"><img src="assets/logo-violeta.jpeg" alt="JHB — Solo JHB Calidad"></a>
+  <nav class="nav__links">
+    <a href="index.html">Inicio</a>
+    <a href="catalogo.html" class="is-active">Catálogo</a>
+    <a href="distribuidores.html">Distribuidores</a>
+    <a href="index.html#contacto">Contacto</a>
+  </nav>
+  <div class="nav__ctas">
+    <a class="btn btn--outline js-quote-btn" href="index.html#contacto">Solicitar cotización</a>
+    <a class="btn btn--solid" href="catalogo.html">Ver catálogo</a>
+  </div>
+  <button class="nav__burger" aria-label="Abrir menú" id="navBurger">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="page-header">
+  <div class="eyebrow">Detalle de producto</div>
+  <h1 class="ls">Bordeadora eléctrica línea Tradicional - TILCARA</h1>
+</div>
+
+<section class="spec-sheets">
+  <img src="assets/ficha-b110.jpeg" alt="Ficha técnica bordeadora de césped B-110/2 Tilcara">
+  <img src="assets/ficha-b111.jpeg" alt="Ficha técnica bordeadora de césped B-111/2 Tilcara">
+  <img src="assets/ficha-b112.jpeg" alt="Ficha técnica bordeadora de césped B-112/2 Tilcara">
+</section>
+
+<section class="distributors-cta">
+  <h2 class="ls">¿Querés más información sobre esta línea?</h2>
+  <p>Consultá con un distribuidor JHB para conocer stock y precios de los modelos B-110/2, B-111/2 y B-112/2.</p>
+  <a class="btn btn--solid" href="index.html#contacto">Consultar a un distribuidor</a>
+</section>
+
+<footer>
+  <span>© 2026 JHB — Solo JHB Calidad</span>
+  <div class="social"><a href="#">Instagram</a><a href="#">Facebook</a><a href="#">WhatsApp</a></div>
+</footer>
+
+<script>
+document.getElementById('navBurger').addEventListener('click', function(){
+  document.querySelector('.nav__links').classList.toggle('nav__links--open');
+});
+</script>
+<script src="assets/quote-modal.js"></script>
+</body>
+</html>

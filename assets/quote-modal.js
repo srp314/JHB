@@ -15,7 +15,7 @@
           '<input type="text" id="qName" name="name" required>' +
         '</div>' +
         '<div class="quote-form__field">' +
-          '<label for="qPhone">Nro. de contacto</label>' +
+          '<label for="qPhone">Nro. de teléfono</label>' +
           '<input type="tel" id="qPhone" name="phone" required>' +
         '</div>' +
         '<div class="quote-form__field">' +
@@ -104,7 +104,7 @@
     var lines = [
       'Hola JHB, quiero solicitar una cotización.',
       'Nombre: ' + nameInput.value.trim(),
-      'Contacto: ' + document.getElementById('qPhone').value.trim(),
+      'Teléfono: ' + document.getElementById('qPhone').value.trim(),
       'Email: ' + document.getElementById('qEmail').value.trim()
     ];
     var location = locationInput.value.trim();
